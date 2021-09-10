@@ -37,8 +37,7 @@ export default {
   modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
 
   axios: {
-    baseURL:
-      process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3333'
+    baseURL: 'https://api-ibook-thiagosilvalopes.herokuapp.com/'
   },
 
   styleResources: {
