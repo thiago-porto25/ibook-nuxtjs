@@ -1,7 +1,5 @@
 <template>
-  <div class="about">
-    <AboutTemplate />
-  </div>
+  <AboutTemplate />
 </template>
 
 <script lang="ts">
@@ -11,5 +9,3 @@ export default Vue.extend({
   layout: 'ibook'
 })
 </script>
-
-<style lang="scss" scoped></style>
