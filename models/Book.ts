@@ -3,7 +3,7 @@ interface Category {
   name: string
 }
 
-interface Page {
+export interface Page {
   id: number
   text: string
   pageNumber: number

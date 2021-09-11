@@ -5,7 +5,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { books } from '@/store'
-import { Book } from '@/models/'
+import { Book } from '@/models'
 
 export default Vue.extend({
   layout: 'ibook',
