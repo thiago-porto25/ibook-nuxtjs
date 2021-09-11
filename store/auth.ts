@@ -21,8 +21,16 @@ export default class Auth extends VuexModule {
   }
 
   @Action
-  public async index({ email, password }: UserInfo) {
-    //const token = await $axios.$post('/login', { email, password })
-    //$cookies.set(token)
+  public async index(name: string) {
+    const token = await $cookies.get(name)
+    this.context.commit('SET_TOKEN', token)
+  }
+
+  @Action
+  public async validate({ email, password }: UserInfo) {
+    const token = await $axios.post('/login')
+    console.log(token)
+
+    //$cookies.set('accessKey', token)
   }
 }

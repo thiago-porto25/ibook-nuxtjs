@@ -1,21 +1,33 @@
 <template>
-  <form @submit="handleSubmit" class="login-form">
-    <input type="email" placeholder="E-mail" />
-    <input type="password" placeholder="Senha" />
+  <form @submit.prevent="handleSubmit" class="login-form">
+    <input minlength="6" type="email" placeholder="E-mail" v-model="email" />
+    <input
+      minlength="6"
+      type="password"
+      placeholder="Senha"
+      v-model="password"
+    />
     <button type="submit">Entrar</button>
   </form>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { auth } from '@/store'
 
 export default Vue.extend({
+  data() {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+
   methods: {
     async handleSubmit() {
-      return 1
+      auth.validate({ email: this.email, password: this.password })
     }
   }
-  // $axios.$post('/login', '{email, password}')
 })
 </script>
 
