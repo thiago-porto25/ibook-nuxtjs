@@ -14,8 +14,14 @@ export default Vue.extend({
     await books.show({ id: params.id as any })
   },
 
-  validate({ params }) {
-    return books.$all.some((book: Book) => book.id === parseInt(params.id, 10))
+  async validate({ params }) {
+    await books.index()
+
+    const result = books.$all.some(
+      (book: Book) => book.id === parseInt(params.id, 10)
+    )
+
+    return result
   },
 
   head() {

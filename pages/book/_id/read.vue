@@ -10,8 +10,20 @@ import { Book } from '@/models'
 export default Vue.extend({
   layout: 'ibook',
 
-  validate({ params }) {
-    return books.$all.some((book: Book) => book.id === parseInt(params.id, 10))
+  async asyncData({ params }) {
+    await books.show({ id: params.id as any })
+  },
+
+  async validate({ params }) {
+    await books.index()
+
+    const result = books.$all.some(
+      (book: Book) => book.id === parseInt(params.id, 10)
+    )
+
+    console.log(result)
+
+    return result
   }
 })
 </script>
