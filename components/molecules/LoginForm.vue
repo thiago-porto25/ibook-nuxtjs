@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="login-form">
+  <form class="login-form">
     <input minlength="6" type="email" placeholder="E-mail" v-model="email" />
     <input
       minlength="6"
@@ -7,25 +7,18 @@
       placeholder="Senha"
       v-model="password"
     />
-    <button type="submit">Entrar</button>
+    <button type="submit"><NuxtLink to="/dashboard">Entrar</NuxtLink></button>
   </form>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { auth } from '@/store'
 
 export default Vue.extend({
   data() {
     return {
       email: '',
       password: ''
-    }
-  },
-
-  methods: {
-    async handleSubmit() {
-      auth.validate({ email: this.email, password: this.password })
     }
   }
 })
@@ -53,6 +46,10 @@ export default Vue.extend({
     cursor: pointer;
     margin-top: 30px;
     font-weight: 500;
+
+    a {
+      color: inherit;
+    }
 
     &:hover {
       background-color: color('dark');

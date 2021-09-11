@@ -1,9 +1,8 @@
 import { Plugin } from '@nuxt/types'
-import { initializeAxios, initializeCookies } from '@/utils/nuxt-instance'
+import { initializeAxios } from '@/utils/nuxt-instance'
 
-const accessor: Plugin = ({ $axios, $cookies }) => {
+const accessor: Plugin = ({ $axios }) => {
   initializeAxios($axios)
-  initializeCookies($cookies)
 }
 
 export default accessor

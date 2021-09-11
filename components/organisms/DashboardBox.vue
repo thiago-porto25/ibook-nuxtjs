@@ -1,21 +1,9 @@
 <template>
   <div class="dashboard-box">
     <DashboardGreeting />
-    <button @click="logout">Logout</button>
+    <button><NuxtLink to="/login">Logout</NuxtLink></button>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  methods: {
-    logout() {
-      console.log('logging out')
-    }
-  }
-})
-</script>
 
 <style lang="scss" scoped>
 .dashboard-box {
@@ -30,6 +18,10 @@ export default Vue.extend({
     background-color: color('dark', 'darkest');
     color: color('light');
     cursor: pointer;
+
+    a {
+      color: inherit;
+    }
   }
 }
 </style>
