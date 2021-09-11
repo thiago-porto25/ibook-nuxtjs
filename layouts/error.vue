@@ -11,22 +11,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  beforeMount() {
-    const body = document.querySelector('body') as HTMLElement
-    body.style.overflow = 'hidden'
-  },
-
-  beforeDestroy() {
-    const body = document.querySelector('body') as HTMLElement
-    body.style.overflow = 'initial'
-  }
-})
-</script>
-
 <style lang="scss" scoped>
 .error {
   background-color: color('dark', 'darkest');
