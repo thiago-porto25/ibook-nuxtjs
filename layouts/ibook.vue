@@ -1,7 +1,7 @@
 <template>
   <div class="ibook-layout">
     <Header />
-    <Container><Nuxt /></Container>
+    <Container><Nuxt class="content" /></Container>
     <Footer />
   </div>
 </template>
@@ -13,6 +13,10 @@
   grid-gap: 6.75rem;
   .container {
     padding-bottom: 6.75rem;
+
+    .content {
+      padding-bottom: 10.9rem;
+    }
   }
   .footer {
     position: absolute;
